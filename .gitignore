@@ -1,0 +1,9 @@
+﻿quiz-app/node_modules/
+quiz-app/dist/
+quiz-app/.angular/
+QuizAPI/bin/
+QuizAPI/obj/
+QuizAPI/build-check/
+*.user
+*.suo
+.vs/

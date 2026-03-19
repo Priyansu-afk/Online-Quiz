@@ -1,0 +1,154 @@
+:root {
+  --bg-main: #080b14;
+  --bg-surface: #0f1629;
+  --bg-card: rgba(15, 22, 41, 0.82);
+  --text-primary: #e9ecff;
+  --text-muted: #98a3bf;
+  --accent-purple: #6c63ff;
+  --accent-teal: #00d4aa;
+  --accent-indigo: #5d6dff;
+  --accent-gradient: linear-gradient(135deg, #6c63ff, #00d4aa);
+  --surface-border: rgba(255, 255, 255, 0.06);
+}
+
+* , *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: -25vmax;
+  pointer-events: none;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(108, 99, 255, 1), transparent 45%),
+    radial-gradient(circle at 84% 22%, rgba(0, 212, 170, 1), transparent 45%),
+    radial-gradient(circle at 48% 84%, rgba(93, 109, 255, 1), transparent 48%);
+  filter: blur(120px);
+  opacity: 0.12;
+  animation: float 8s ease-in-out infinite alternate;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.14'%3E%3Ccircle cx='12' cy='14' r='1'/%3E%3Ccircle cx='90' cy='64' r='1'/%3E%3Ccircle cx='134' cy='22' r='1'/%3E%3Ccircle cx='56' cy='148' r='1'/%3E%3Ccircle cx='164' cy='130' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.03;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Syne', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+.btn,
+.btn-start,
+.toggle-btn,
+.retry-btn,
+.cta-btn {
+  font-family: 'DM Sans', sans-serif;
+}
+
+button:active,
+.btn:active,
+.btn-start:active,
+.toggle-btn:active,
+.retry-btn:active,
+.cta-btn:active {
+  transform: scale(0.97);
+}
+
+.gradient-heading {
+  background: linear-gradient(135deg, #fff 0%, #a8a4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-wrap {
+  animation: fadeSlideIn 0.55s ease both;
+}
+
+.skeleton {
+  background: linear-gradient(110deg, rgba(255, 255, 255, 0.05) 8%, rgba(255, 255, 255, 0.12) 18%, rgba(255, 255, 255, 0.05) 33%);
+  background-size: 200% 100%;
+  border-radius: 12px;
+  animation: shimmer 1.4s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+@keyframes float {
+  from {
+    transform: translate3d(-2%, -1%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(2%, 1%, 0) scale(1.06);
+  }
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drawCircle {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
